@@ -27,4 +27,15 @@ public class restEndpointController {
             return "Error saving employee info";
         }
     }
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/employee/delete")
+    public String deleteEmp(@RequestParam(name="empId", required = true) String pk){
+        try{
+            //Retrieve emp base on pk
+            dashboardService.deleteEmployee((dashboardService.getEmployee(pk)));
+            return "deleted";
+        } catch(Exception e){
+            return "error";
+        }
+    }
 }
