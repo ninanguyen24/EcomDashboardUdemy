@@ -20,6 +20,12 @@ public class ThymeleafController {
 
         //Populate the Employees info
         model.addAttribute("ei", dashboardService.getAllEmployee());
+
+
+        //Populate the Order Received info
+        model.addAttribute("or", dashboardService.getAllOrderReceived());
+
         return "/dashboard";
+
     }
 }
